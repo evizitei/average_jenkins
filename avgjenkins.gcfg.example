@@ -1,0 +1,4 @@
+[jenkins]
+builds=some-build-name
+builds=another-build-name
+host=jenkins.yourdomain.com
