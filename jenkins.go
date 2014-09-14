@@ -7,14 +7,16 @@ import (
 	"net/http"
 )
 
+type Build struct {
+	Duration  int    `json:"duration"`
+	Id        string `json:"id"`
+	Number    int    `json:"number"`
+	Result    string `json:"result"`
+	Timestamp int64  `json:"timestamp"`
+}
+
 type Project struct {
-	Builds []struct {
-		Duration  int    `json:"duration"`
-		Id        string `json:"id"`
-		Number    int    `json:"number"`
-		Result    string `json:"result"`
-		Timestamp int64  `json:"timestamp"`
-	}
+	Builds []Build `json:"builds"`
 }
 
 func (proj *Project) averageDuration() int {
